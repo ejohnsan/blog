@@ -1,0 +1,142 @@
+{% extends "plantilla.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<h1 style= "text-align: center;">Bienvenido a nuestros tours guiados</h1><br>
+
+<h3>Recorre nuevas aventuas</h3><br>
+
+<form action="tour" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+  <div class="col-md-2 position-relative">
+    <b>Pais:</b>
+    <select class="form-select" type="text" name="pais" required>
+      <option>Elegir...</option>
+      <option>Colombia</option>
+      <option>Estados Unidos</option>
+      <option>Argentina</option>
+      <option>Brasil</option>
+      <option>Peru</option>
+    </select>
+    <div class="invalid-tooltip">
+      <h6>Por favor selecciona un pais valido.</h6>
+    </div>
+  </div>
+
+  <div class="col-md-2 position-relative">
+    <b>Ciudad:</b>
+    <select class="form-select" type="text" name="ciudad" required>
+      <option>Elegir...</option>
+      <option>Medellin</option>
+      <option>Bogota</option>
+      <option>Cartagena</option>
+      <option>San Andres</option>
+      <option>Santa Marta</option>
+      <option>Barranquilla</option>
+      <option>Santiago de Cali</option>
+      <option>Nariño</option>
+    </select>
+    <div class="invalid-tooltip">
+      <h6>Por favor selecciona una ciudad valida.</h6>
+    </div>
+  </div>
+
+  <div class="col-md-2 position-relative">
+    <b>Aventura:</b>
+    <input type="text" class="form-control" name="aventura" required>
+    <div class="valid-tooltip">
+      <h6>Looks good!</h6>
+    </div>
+  </div>
+
+  <div class="col-md-4 position-relative">
+    <b">Descripcion:</b>
+    <textarea class="form-control" placeholder="Describe el tour"  name="descripcion"></textarea>
+    <div class="invalid-tooltip">
+      <h6>Por favor haz una descripcion.</h6>
+    </div>
+  </div>
+
+  <div class="col-md-2 position-relative">
+    <b>Operador:</b>
+    <select class="form-select" type="text" name="operador" required>
+      <option>Elegir...</option>
+      <option>Elton Sandoval</option>
+      <option>Johana Escobar</option>
+      <option>Bryan Sandoval</option>
+      <option>Gladys Munera</option>
+    </select>
+    <div class="invalid-tooltip">
+      <h6>Seleccione un guia valido.</h6>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <b>Imagen:</b>
+    <input class="form-control" type="file" name="imagen">
+  </div>
+
+  <div class="col-md-2 position-relative">
+    <b>Salida:</b>
+    <input type="date" class="form-control" name="salida" required>
+    <div class="invalid-tooltip">
+      <h6>Introduce una fecha valida</h6>
+    </div>
+  </div> 
+
+  <div class="col-md-2 position-relative">
+    <b>Hora:</b>
+    <input type="time" class="form-control" name="hora" required>
+    <div class="invalid-tooltip">
+      <h6>Introduce una hora valida</h6>
+    </div>
+  </div><br>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Enviar</button>
+</div>
+
+
+</form>
+
+
+{% endblock %}
+
+
+
+<!--
+  
+<form action="tour" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+  <b>Pais:</b>
+  <input type="text" name="pais" required> <br><br>
+
+  <b>Ciudad:</b>
+  <input type="text" name="ciudad" required><br><br>
+
+  <b>Aventura:</b>
+  <input type="text" name="aventura" required><br><br>
+
+  <b>Descripcion:</b>
+  <textarea name="descripcion" cols="30" rows="10" required></textarea><br><br>
+
+  <b>Operador:</b>
+  <input type="text" name="operador" required><br><br>
+
+  <b>Salida:</b>
+  <input type="date" name="salida" required><br><br>
+
+  <b>Hora:</b>
+  <input type="time" name="hora" required><br><br>
+
+  <input type="submit" value="Enviar">
+  
+
+</form>
+-->
+
+

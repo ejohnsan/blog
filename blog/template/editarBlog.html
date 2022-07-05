@@ -1,0 +1,34 @@
+{% extends "plantilla.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+
+<form action="{% url 'editarB' viajes.id %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+    <b>Titulo:</b>
+    {{form.titulo}}<br><br>
+    
+    <b>Subtitulo:</b>
+    {{form.subtitulo}}<br><br>
+    
+    <b>Contenido:</b>
+    {{form.contenido}}<br><br>
+
+    <b>Autor:</b>
+    {{form.autor}}<br><br>
+
+    <b>Creado:</b>
+    <input type="date" name="creado" required><br><br>
+    
+    <b>Imagen:</b>
+    <input type="file" name="imagen" required><br><br>
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+{% endblock %}

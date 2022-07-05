@@ -1,0 +1,42 @@
+{% extends "plantilla.html" %}
+    
+{% load static %}
+        
+        
+{% block content %}
+        
+{% for n in datos %}
+
+<section>
+    <div class="container">
+      <div class="row">
+          <!-- Blog entries-->
+          <div class="col-lg-10">
+            <!-- Featured blog post-->
+            <div class="card mb-4">
+                {% if n.imagen %}
+                <img class="card-img-top" src="{{n.imagen.url}}" alt="..." />
+                {% endif %}
+                <div class="card-body">
+                    <h1 class="card-title">{{n.pais}}</h1>
+                    <h2 class="card-title">{{n.ciudad}}</h2>
+                    <b class="card-text">{{n.aventura}}</b>
+                    <b class="card-text"><span class="moreText">{{n.descripcion}}</span></b><br>
+                    <b class="card-text">{{n.salida}}</b>
+                    <b class="card-text">{{n.hora}}</b><br>
+                    <b class="card-text">{{n.operador}}</b><br><br>
+                    <a class="btn btn-primary" href="">Read more →</a>
+                    <a class="btn btn-primary" href="">Delete</a>
+                <a class="btn btn-primary" href="">Edit</a>
+                </div>
+            </div>
+        </div>   
+</section>
+   
+{% endfor %}
+    
+<button>
+    <a href="{% url 'tour' %}">Crear nuevo tour</a>
+</button>
+    
+{% endblock %}

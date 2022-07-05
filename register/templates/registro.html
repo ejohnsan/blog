@@ -1,0 +1,16 @@
+{% extends "plantilla.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    {{form.as_table}} <br>
+    
+    <button type="submit">Registrar</button>
+</form>
+
+{% endblock %}

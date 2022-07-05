@@ -1,0 +1,81 @@
+{% extends "plantilla.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<h1 style= "text-align: center;">Bienvenido al creador de Blogs</h1><br>
+
+<h3>Inspirate en tus ideas</h3><br>
+
+
+
+<form action="blogs" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+    <div class="col-md-2 position-relative">
+        <b>Titulo:</b>
+        <input type="text" class="form-control" name="titulo" required>
+        <div class="valid-tooltip">
+            <h6>Looks good!</h6>
+        </div>
+    </div>
+
+    <div class="col-md-2 position-relative">
+        <b>Subtitulo:</b>
+        <input type="text" class="form-control" name="subtitulo" required>
+        <div class="valid-tooltip">
+            <h6>Looks good!</h6>
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <b>Contenido:</b><br>
+        <textarea class="form-control" placeholder="Describe el tour" name="contenido"></textarea>
+        <div class="invalid-tooltip">
+            <h6>Por favor haz una descripcion.</h6>
+        </div>
+    </div>
+
+
+    <div class="col-md-2 position-relative">
+      <b>Autor:</b>
+      <select class="form-select" type="text" name="autor" required>
+        <option>Elegir...</option>
+        <option>Elton Sandoval</option>
+        <option>Johana Escobar</option>
+        <option>Patricia Perez</option>
+        <option>Gladys Munera</option>
+        <option>Bryan Sandoval</option>
+      </select>
+      <div class="invalid-tooltip">
+        <h6>Por favor selecciona un pais valido.</h6>
+      </div>
+    </div>
+
+    
+
+    <div class="col-md-2 position-relative">
+      <b for="">Creado:</b>
+      <input type="date" class="form-control" name="creado" required>
+      <div class="valid-tooltip">
+        <h6>Looks good!</h6>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <b>Imagen:</b>
+      <input class="form-control" type="file" name="imagen" required>
+    </div><br>
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </div>
+    
+    
+</form>
+
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends "plantilla.html" %}
+    
+{% load static %}
+    
+    
+{% block content %}
+    
+{% for n in datos %}
+
+<section>
+  <div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-10">
+            <!-- Featured blog post-->
+            <div class="card mb-4">
+              {% if n.imagen %}
+              <img class="card-img-top" src="{{n.imagen.url}}" alt="..." />
+              {% endif %}
+              <div class="card-body">
+                <div class="small text-muted">{{n.creado}}</div>
+                <h1 class="card-title">{{n.titulo}}</h1>
+                <h2 class="card-title">{{n.subtitulo}}</h2>
+                <p class="card-text"><span class="moreText">{{n.contenido}}</span></p>
+                <p class="card-text">{{n.autor}}</p>
+                <a class="btn btn-primary" href="">Read more →</a>
+                <a class="btn btn-primary" href="{% url 'eliminaBlog' n.id %}">Delete</a>
+                <a class="btn btn-primary" href="{% url 'editarB' n.id %}">Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+{% endfor %}
+
+<button>
+  <a href="{% url 'blogs' %}">Crear nuevo blog</a>
+</button>
+
+{% endblock %}
+
+
