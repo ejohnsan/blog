@@ -9,3 +9,5 @@ la aplicacion cuenta con registro, con logout y editar registro
 el video no se monta porque genero errores
 
 cree diferentes app para crear el blog en total fueron 3 app 1 para cada blog y otra para registro.
+
+link video https://drive.google.com/file/d/1UlDyHai7KWK08sVKNRu5aiXuQmtKv8c0/view?usp=sharing
